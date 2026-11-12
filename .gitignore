@@ -1,0 +1,26 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Editor directories
+.vscode/
+.idea/
+
+# Binaries, video and test screenshots
+*.exe
+*.mp4
+*.png
+!assets/**/*.png
+!assets/**/*.jpg
+!assets/**/*.webp
+
+# Temporary files
+dormistock_raw.html
+index_modal_preview.html
+
+# Vercel
+.vercel

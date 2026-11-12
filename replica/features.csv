@@ -1,0 +1,16 @@
+feature,area,priority,original,clone,notes
+Floating Island Glass Navbar,navigation,must,yes,yes,Detached blur island with store selector
+Hero Section with Trust Badges & Dual CTA,hero,must,yes,yes,Includes double-bezel card and 4 value pillars
+3-Step Sleep Diagnostic Quiz (Wizard),lead-gen,must,no,yes,Major CRO innovation over static Elementor form
+Dual Channel Routing (WhatsApp + Form Webhook),conversion,must,no,yes,Structured WhatsApp text + webhook
+Interactive Product Catalog with Category Tabs,catalog,must,yes,yes,Smooth vanilla category filtering
+Visual Firmness & Breathability Gauges,catalog,must,no,yes,Haptic dots showing 1-10 firmness
+Dynamic Size & Variant Selector,catalog,should,no,yes,Interactive size chips updating prices live
+1-Click Slide-Over Quote Drawer,conversion,must,no,yes,Slide from right with prefilled product
+Featured Value Packs with Finish Selector,sales,must,yes,yes,Includes color swatches and size selector
+4-Pillar Trust Grid (Finance Transport Old Bed Removal Local Store),trust,must,yes,yes,Bento grid with custom icons
+Interactive 3-Store Locator (El Alamo Sanse La Latina),local-seo,must,partial,yes,Tab switcher with live map and store phone
+Verified Customer Testimonials & Reviews,social-proof,should,yes,yes,Real store reviews with stars
+Interactive FAQ Accordion,trust,should,no,yes,Smooth animated accordion
+Persistent Floating Action Bar (WhatsApp + Call),mobile-cro,must,no,yes,Persistent floating WhatsApp button
+Centralized Config File (config.js),architecture,must,no,yes,Central config for easy updates

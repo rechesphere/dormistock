@@ -1,0 +1,2443 @@
+/* ==========================================================================
+   DORMISTOCK - ADAPTACIÓN DISEÑO PREMIUM TOMUZA (OPCIÓN 3)
+   Landing Page de Máxima Conversión (CRO)
+   Paleta: Azul Marino (#0F2137 / #122238) + Naranja / Ámbar Tomuza (#F59E0B)
+   Bordes nítidos 1.5px, sombras sólidas ilustradas, cero emojis, 100% SVG.
+   Regla Estricta: Pastillas y botones SIEMPRE en 1 sola línea (white-space: nowrap).
+   ========================================================================== */
+
+:root {
+  /* Paleta Base y Superficies */
+  --bg-primary: #F8F9FA;
+  --bg-secondary: #EEF2F6;
+  --bg-tertiary: #E2E8F0;
+  --surface-card: #FFFFFF;
+  --surface-subtle: #F1F5F9;
+  --surface-dark: #0F2137;
+  --surface-dark-card: #18283B;
+
+  /* Colores Estructurales y de Acento Oficial Tomuza Opción 3 */
+  --color-primary: #0F2137;
+  --color-primary-hover: #18314F;
+  --color-navy-blue: #162C46;
+  --color-accent-safety: #F59E0B; /* Naranja Mostaza Oficial Tomuza */
+  --color-accent-safety-hover: #D97706;
+  --color-accent-orange: #EA580C;
+  --color-accent-yellow: #FBBF24;
+  --color-accent-amber-subtle: #FEF3C7;
+  --color-accent-amber-border: #FDE68A;
+  --color-accent-amber-text: #92400E;
+  --color-success: #10B981;
+  --color-danger-subtle: #EF4444;
+
+  /* Tipografia y Textos */
+  --text-main: #0F172A;
+  --text-muted: #475569;
+  --text-light: #94A3B8;
+  --text-inverse: #FFFFFF;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Bordes y Sombras Sólidas Ilustradas (Estilo Tomuza Opción 3) */
+  --border-light: 1.5px solid #E2E8F0;
+  --border-subtle: 1.5px solid #CBD5E1;
+  --border-focus: 2px solid #0F2137;
+  --border-accent: 1.5px solid #F59E0B;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 2px 0 #E2E8F0;
+  --shadow-md: 0 4px 0 #CBD5E1;
+  --shadow-lg: 0 6px 0 #CBD5E1;
+  --shadow-floating: 0 6px 0 rgba(15, 33, 55, 0.15), 0 16px 32px rgba(15, 33, 55, 0.1);
+
+  /* Patrones Vectoriales (Cero Degradados de IA) */
+  --pattern-grid: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 0H0v24' fill='none' stroke='%23CBD5E1' stroke-width='0.75' opacity='0.45'/%3E%3Ccircle cx='24' cy='0' r='1' fill='%2394A3B8' opacity='0.55'/%3E%3C/svg%3E");
+  --pattern-stripes: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2364748B' fill-opacity='0.05'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+
+  /* Curvas de Animación */
+  --ease-master: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 0.2s;
+  --duration-normal: 0.35s;
+
+  /* Layout */
+  --max-width: 1200px;
+  --side-padding: clamp(16px, 4vw, 32px);
+  --section-spacing: clamp(64px, 8vw, 104px);
+}
+
+/* Reset y Reglas Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  background-image: var(--pattern-grid);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  background-image: var(--pattern-grid);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Contenedor Universal */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+}
+
+.section {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+  position: relative;
+}
+
+.section--alt {
+  background-color: var(--bg-secondary);
+  background-image: var(--pattern-stripes);
+  border-top: 1.5px solid #CBD5E1;
+  border-bottom: 1.5px solid #CBD5E1;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto clamp(40px, 6vw, 64px) auto;
+}
+
+/* Pastillas de Sección: SIEMPRE en 1 sola línea (Un-slop) */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: var(--color-accent-amber-subtle);
+  color: var(--color-accent-amber-text);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  margin-bottom: 16px;
+  border: 1px solid var(--color-accent-amber-border);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-size: clamp(1.875rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--color-primary);
+  letter-spacing: -0.025em;
+  margin-bottom: 16px;
+}
+
+.section-description {
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   BARRA DE NAVEGACIÓN STICKY (HEADER)
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgba(248, 249, 250, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 2px solid #E2E8F0;
+  box-shadow: 0 2px 0 #CBD5E1;
+  transition: background-color var(--duration-normal) var(--ease-master), box-shadow var(--duration-normal) var(--ease-master);
+}
+
+.site-header--scrolled {
+  box-shadow: var(--shadow-md);
+  background-color: rgba(255, 255, 255, 0.98);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  gap: 16px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brand-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+  line-height: 1.1;
+}
+
+.brand-subtext {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-accent-safety);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.header-phone-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background-color: var(--bg-secondary);
+  border: var(--border-light);
+  border-radius: var(--radius-sm);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  transition: all var(--duration-fast) ease;
+  white-space: nowrap;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header-phone-link:hover {
+  background-color: #E2E8F0;
+  border-color: #CBD5E1;
+}
+
+.header-phone-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-accent-safety);
+  flex-shrink: 0;
+}
+
+.header-cta-btn {
+  white-space: nowrap !important;
+  flex-shrink: 0;
+}
+
+.cta-text-mobile {
+  display: none;
+  white-space: nowrap !important;
+}
+
+/* ==========================================================================
+   BOTONERA PRINCIPAL (Bordes nítidos y sombras sólidas Tomuza)
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap !important;
+  flex-shrink: 0;
+  border: 2px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:active {
+  transform: translateY(2px);
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--duration-normal) var(--ease-master);
+  flex-shrink: 0;
+}
+
+.btn:hover .btn-icon--arrow {
+  transform: translateX(4px);
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--text-inverse);
+  border-color: #091422;
+  box-shadow: 0 3px 0 #060D17;
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 0 #060D17;
+}
+
+.btn--primary:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #060D17;
+}
+
+/* Botón Acento Naranja Oficial Tomuza */
+.btn--accent {
+  background-color: var(--color-accent-safety);
+  color: #0F172A;
+  border-color: var(--color-accent-safety-hover);
+  box-shadow: 0 3px 0 #B45309;
+}
+
+.btn--accent:hover {
+  background-color: var(--color-accent-yellow);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 0 #B45309;
+}
+
+.btn--accent:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #B45309;
+}
+
+.btn--secondary {
+  background-color: #FFFFFF;
+  color: #0F172A;
+  border: 2px solid #CBD5E1;
+  box-shadow: 0 3px 0 #94A3B8;
+}
+
+.btn--secondary:hover {
+  background-color: #F8FAFC;
+  border-color: #94A3B8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 0 #94A3B8;
+}
+
+.btn--secondary:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #94A3B8;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+.btn--lg {
+  padding: 16px 32px;
+  font-size: 1.0625rem;
+}
+
+/* ==========================================================================
+   SECCION HERO (Columna Izquierda + Ficha Oficial a la Derecha)
+   ========================================================================== */
+.hero-section {
+  padding-top: clamp(48px, 7vw, 84px);
+  padding-bottom: clamp(64px, 8vw, 100px);
+  background-color: var(--bg-primary);
+  background-image: var(--pattern-grid);
+  position: relative;
+  border-bottom: 1.5px solid #CBD5E1;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(36px, 5vw, 64px);
+  align-items: center;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: var(--color-accent-amber-subtle);
+  border: 1px solid var(--color-accent-amber-border);
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-accent-amber-text);
+  width: fit-content;
+  white-space: nowrap !important;
+  flex-shrink: 0;
+}
+
+.pill-text-mobile {
+  display: none;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-accent-safety);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
+  animation: pulseSafety 2s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+@keyframes pulseSafety {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.6; }
+}
+
+/* Clases de Soporte para Texto en 1 Sola Línea Desktop vs Móvil */
+.btn-text-mobile {
+  display: none;
+}
+
+.btn-text-desktop {
+  display: inline;
+}
+
+.hero-title {
+  font-size: clamp(2.25rem, 4.4vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-primary);
+}
+
+.hero-title span {
+  color: var(--color-accent-safety);
+  position: relative;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 620px;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.hero-trust-bar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: var(--border-light);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.trust-item-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-accent-safety);
+  flex-shrink: 0;
+}
+
+/* Tarjeta Ficha Oficial del Negocio (Columna Derecha Hero) */
+.hero-card-panel {
+  background-color: var(--surface-card);
+  border: 2px solid #CBD5E1;
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 4vw, 36px);
+  box-shadow: 0 6px 0 #CBD5E1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.hero-card-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: var(--color-accent-safety);
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+}
+
+.panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: var(--border-light);
+  padding-bottom: 16px;
+}
+
+.panel-header-title {
+  font-size: 1.0625rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  display: block;
+  line-height: 1.25;
+}
+
+.stamp-seal-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #D97706;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background-color: rgba(254, 243, 199, 0.7);
+  font-size: 0.625rem;
+  font-weight: 900;
+  color: #92400E;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.25;
+  white-space: nowrap !important;
+  flex-shrink: 0;
+  transform: rotate(-3deg);
+  box-shadow: 0 2px 0 rgba(217, 119, 6, 0.2);
+  transition: transform 0.25s ease, background-color 0.25s ease;
+  user-select: none;
+}
+
+.stamp-seal-badge strong {
+  font-size: 0.825rem;
+  color: #B45309;
+}
+
+.stamp-seal-badge:hover {
+  transform: rotate(0deg) scale(1.03);
+  background-color: rgba(254, 243, 199, 0.95);
+}
+
+.stamp-seal-badge--header {
+  transform: rotate(2deg);
+}
+
+.stamp-seal-badge--header:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+/* Pastilla 'Stock Vivo' - ESTRICTAMENTE EN 1 SOLA LÍNEA (Colores Tomuza Ámbar / Seguridad) */
+.panel-badge-24h {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--color-accent-amber-text);
+  background-color: var(--color-accent-amber-subtle);
+  border: 1.5px solid var(--color-accent-amber-border);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  white-space: nowrap !important;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.panel-badge-24h svg {
+  color: var(--color-accent-safety);
+  stroke: var(--color-accent-safety);
+  flex-shrink: 0;
+}
+
+.panel-phone-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-secondary);
+  border: var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.panel-phone-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-phone-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.panel-phone-number {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.panel-call-btn {
+  width: 44px;
+  height: 44px;
+  background-color: #10B981;
+  color: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 0 #059669;
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+}
+
+.panel-call-btn:hover {
+  transform: scale(1.06);
+}
+
+.panel-perks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.panel-perk {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.panel-perk strong {
+  color: var(--text-main);
+}
+
+.panel-perk-icon {
+  width: 18px;
+  height: 18px;
+  color: #10B981;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.panel-maps-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-accent-amber-text);
+  padding: 8px 14px;
+  background-color: var(--color-accent-amber-subtle);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-accent-amber-border);
+  transition: all var(--duration-fast) ease;
+  white-space: nowrap !important;
+  flex-shrink: 0;
+}
+
+.panel-maps-link:hover {
+  background-color: #FDE68A;
+}
+
+/* ==========================================================================
+   SECCION COMPARATIVA: TRADICIONAL VS DORMISTOCK (3 vs 3)
+   ========================================================================== */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(24px, 4vw, 36px);
+  margin-top: 32px;
+}
+
+.comparison-card {
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 4vw, 36px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.comparison-card--traditional {
+  background-color: #FFFFFF;
+  border: 2px solid #FECACA;
+  box-shadow: 0 4px 0 #FCA5A5;
+}
+
+.comparison-card--dormistock {
+  background-color: var(--surface-dark);
+  color: #FFFFFF;
+  border: 2px solid #1E3A5F;
+  box-shadow: 0 6px 0 #091422;
+  position: relative;
+}
+
+.comparison-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.08);
+}
+
+.comparison-card--dormistock .comparison-header {
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.15);
+}
+
+.comparison-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.comparison-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: auto;
+}
+
+.comparison-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.comparison-item--bad {
+  color: #7F1D1D;
+}
+
+.comparison-item--bad .comparison-item-icon {
+  color: #DC2626;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.comparison-item--good {
+  color: #E2E8F0;
+}
+
+.comparison-item--good strong {
+  color: #FFFFFF;
+}
+
+.comparison-item--good .comparison-item-icon {
+  color: #34D399;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   BENTO GRID DE PRODUCTOS (Con Fotos Reales Dormistock)
+   ========================================================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: clamp(20px, 3vw, 32px);
+}
+
+.service-card {
+  background-color: var(--surface-card);
+  border: 2px solid #CBD5E1;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: 0 4px 0 #CBD5E1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 0 #94A3B8;
+}
+
+.service-card--featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 2px solid var(--color-accent-safety);
+  box-shadow: 0 6px 0 #B45309;
+}
+
+.featured-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 12px 16px;
+}
+
+@media (max-width: 992px) {
+  .featured-card-content {
+    padding: 14px 0 0 0;
+  }
+}
+
+.service-img-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1.5px solid #E2E8F0;
+  background-color: #000;
+  position: relative;
+}
+
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.service-card:hover .service-img {
+  transform: scale(1.04);
+}
+
+.service-badge-pill {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: rgba(15, 33, 55, 0.92);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  white-space: nowrap !important;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.25;
+}
+
+.service-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: auto;
+}
+
+.service-specs-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: var(--border-light);
+}
+
+.spec-chip {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-accent-amber-text);
+  background-color: var(--color-accent-amber-subtle);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-accent-amber-border);
+  white-space: nowrap !important;
+  flex-shrink: 0;
+}
+
+.service-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: var(--border-light);
+}
+
+.service-price-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-price-hint {
+  font-size: 0.6875rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.service-price-val {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   SECCION TIENDAS FÍSICAS EN MADRID (Sanse, Latina, El Álamo)
+   ========================================================================== */
+.stores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.store-box {
+  background-color: #FFFFFF;
+  border: 2px solid #CBD5E1;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: 0 4px 0 #CBD5E1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.store-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: var(--border-light);
+  gap: 8px;
+}
+
+.store-box-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.store-box-zone {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-accent-amber-text);
+  background-color: var(--color-accent-amber-subtle);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-accent-amber-border);
+  white-space: nowrap !important;
+  flex-shrink: 0;
+}
+
+.store-box-address {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.store-box-schedule {
+  font-size: 0.8125rem;
+  color: #64748B;
+  background-color: var(--bg-secondary);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  line-height: 1.45;
+}
+
+.store-box-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  width: 100%;
+}
+
+.store-action-primary {
+  flex: 1 1 auto;
+  justify-content: center;
+  white-space: nowrap !important;
+}
+
+.store-action-secondary {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   RESEÑAS REALES DE GOOGLE (Testimonios Verificados)
+   ========================================================================== */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.review-card {
+  background-color: #FFFFFF;
+  border: 2px solid #CBD5E1;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: 0 4px 0 #CBD5E1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-author {
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.review-stars {
+  display: flex;
+  gap: 3px;
+  color: #F59E0B;
+}
+
+.review-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.review-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #065F46;
+  background-color: #D1FAE5;
+  border: 1px solid #A7F3D0;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  width: fit-content;
+  margin-top: auto;
+  white-space: nowrap !important;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   ACORDEÓN FAQ (Preguntas Frecuentes)
+   ========================================================================== */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background-color: #FFFFFF;
+  border: 2px solid #CBD5E1;
+  border-radius: var(--radius-md);
+  box-shadow: 0 3px 0 #CBD5E1;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.faq-item:hover {
+  border-color: var(--color-primary);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px 24px;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+}
+
+.faq-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-accent-safety);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 24px 20px 24px;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  display: none;
+  border-top: 1px dashed #CBD5E1;
+  padding-top: 16px;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* ==========================================================================
+   MODAL CUALIFICADOR MULTI-PASO (Centro Exacto en Viewport)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(15, 33, 55, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-overlay--active {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 580px;
+  background-color: #FFFFFF;
+  border: 2px solid #0F2137;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 0 #0F2137, 0 20px 40px rgba(0, 0, 0, 0.35);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-top-header {
+  padding: 20px 24px;
+  border-bottom: 2px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background-color: #F8FAFC;
+  border-top-left-radius: calc(var(--radius-lg) - 2px);
+  border-top-right-radius: calc(var(--radius-lg) - 2px);
+}
+
+.modal-progress-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #E2E8F0;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.modal-progress-fill {
+  height: 100%;
+  width: 25%;
+  background-color: var(--color-accent-safety);
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+.modal-progress-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.modal-close-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-primary);
+  border: 1.5px solid #CBD5E1;
+  background-color: #FFFFFF;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.modal-close-btn:hover {
+  background-color: #FEE2E2;
+  border-color: #EF4444;
+  color: #B91C1C;
+}
+
+.modal-step {
+  padding: 28px 24px;
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-step--active {
+  display: flex;
+}
+
+.step-heading {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+}
+
+.step-subheading {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: -12px;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.option-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background-color: var(--bg-secondary);
+  border: 2px solid #CBD5E1;
+  border-radius: var(--radius-md);
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.option-btn:hover {
+  border-color: #0F2137;
+  background-color: #FFFFFF;
+}
+
+.option-btn--selected {
+  border-color: #0F2137;
+  background-color: #FFFFFF;
+  box-shadow: 0 3px 0 #0F2137;
+}
+
+.option-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--color-accent-safety);
+  flex-shrink: 0;
+}
+
+.option-check-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #CBD5E1;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.option-btn--selected .option-check-circle {
+  background-color: #0F2137;
+  border-color: #0F2137;
+  color: #FFFFFF;
+}
+
+.modal-nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.modal-nav-row--end {
+  justify-content: flex-end;
+}
+
+.form-group-cad {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label-cad {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.form-input-cad {
+  padding: 12px 16px;
+  border: 2px solid #CBD5E1;
+  border-radius: var(--radius-sm);
+  background-color: #F8FAFC;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  transition: border-color 0.15s ease;
+}
+
+.form-input-cad:focus {
+  outline: none;
+  border-color: #0F2137;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 0 #0F2137;
+}
+
+/* ==========================================================================
+   WIDGET FLOTANTE DE WHATSAPP (Bottom-Right)
+   ========================================================================== */
+.whatsapp-floating-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: #FFFFFF;
+  padding: 12px 20px;
+  border-radius: var(--radius-full);
+  border: 2px solid #1EBE5D;
+  box-shadow: 0 4px 0 #128C7E, 0 10px 20px rgba(37, 211, 102, 0.35);
+  font-weight: 800;
+  font-size: 0.9rem;
+  white-space: nowrap !important;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-floating-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer {
+  background-color: var(--surface-dark);
+  color: #94A3B8;
+  border-top: 2px solid #091422;
+  padding-top: 64px;
+  padding-bottom: 40px;
+  font-size: 0.875rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 40px;
+  padding-bottom: 48px;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-brand-title {
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.footer-col-title {
+  color: #FFFFFF;
+  font-size: 0.9375rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-link:hover {
+  color: #FFFFFF;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.8125rem;
+}
+
+/* ==========================================================================
+   MICRO-DETALLE 1: PLIEGUE DE HOJA TÉCNICO EN ESQUINA INFERIOR DERECHA
+   (Inspirado en Tomuza Opción 3, transición suave a Naranja de Seguridad #F59E0B)
+   ========================================================================== */
+.service-card,
+.store-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after,
+.store-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 16px 16px;
+  border-color: transparent transparent #CBD5E1 transparent;
+  border-bottom-right-radius: var(--radius-md);
+  transition: border-width 0.2s ease, border-color 0.2s ease;
+  pointer-events: none;
+}
+
+.service-card:hover::after,
+.store-box:hover::after {
+  border-width: 0 0 22px 22px;
+  border-color: transparent transparent #F59E0B transparent;
+}
+
+/* ==========================================================================
+   MICRO-DETALLE 2: REMACHES / TORNILLOS DE PANEL INDUSTRIAL EN ESQUINAS
+   (Estructura industrial de taller, ranura en cruz y sutil brillo de linterna)
+   ========================================================================== */
+.panel-rivet {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #334155;
+  border: 1px solid #64748B;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.panel-rivet::after {
+  content: '+';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  line-height: 1;
+  color: #94A3B8;
+  font-weight: 800;
+}
+
+.panel-rivet--tl { top: 12px; left: 12px; }
+.panel-rivet--tr { top: 12px; right: 12px; }
+.panel-rivet--bl { bottom: 12px; left: 12px; }
+.panel-rivet--br { bottom: 12px; right: 12px; }
+
+/* Efecto haz de luz táctico en panel oscuro */
+.has-headlamp-effect {
+  position: relative;
+}
+
+.has-headlamp-effect::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle 220px at var(--lamp-x, 50%) var(--lamp-y, 50%),
+    rgba(245, 158, 11, 0.08) 0%,
+    rgba(245, 158, 11, 0.02) 50%,
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .has-headlamp-effect:hover::after {
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   MICRO-DETALLE 3: CARRIL LATERAL CON SEGUIMIENTO DE DESCANSO (SCROLL CLIMBER)
+   (Polea superior giratoria, especialista en descenso, altímetro y bocadillo reactivo)
+   ========================================================================== */
+.rope-scroll-track {
+  position: fixed;
+  right: clamp(8px, 2vw, 36px);
+  top: 0;
+  bottom: 0;
+  width: 44px;
+  pointer-events: none;
+  z-index: 80;
+  transition: opacity 0.3s ease;
+}
+
+.rope-anchor {
+  position: absolute;
+  top: 76px;
+  left: 13px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.pulley-wheel {
+  width: 22px;
+  height: 22px;
+  will-change: transform;
+}
+
+.rope-line {
+  position: absolute;
+  top: 86px;
+  left: 24px;
+  bottom: 24px;
+  width: 2px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #64748B 0px,
+    #64748B 5px,
+    #CBD5E1 5px,
+    #CBD5E1 10px
+  );
+  box-shadow: 1px 0 2px rgba(0, 0, 0, 0.08);
+}
+
+.rope-climber {
+  position: absolute;
+  left: 0;
+  top: 130px;
+  width: 44px;
+  height: 60px;
+  transform-origin: 24px 8px;
+  will-change: transform;
+}
+
+.climber-wind-stream {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 5;
+}
+
+.wind-line {
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(to top, transparent, #0F2137 40%, #F59E0B 60%, transparent);
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: windStreamFloat 0.42s cubic-bezier(0.15, 0.85, 0.35, 1) forwards;
+}
+
+@keyframes windStreamFloat {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-38px);
+    opacity: 0;
+  }
+}
+
+.climber-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 6px rgba(15, 23, 42, 0.25));
+}
+
+.climber-tag {
+  position: absolute;
+  right: 48px;
+  top: 14px;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+  opacity: 0;
+  transform: translateX(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.rope-scroll-track:hover .climber-tag {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Bocadillo reactivo estilo cómic (Escritorio) */
+.climber-speech-bubble {
+  position: absolute;
+  right: 56px;
+  top: 4px;
+  background-color: #FFFFFF;
+  color: #122238;
+  border: 2px solid #122238;
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  white-space: nowrap;
+  box-shadow: 0 4px 0 #122238;
+  opacity: 0;
+  transform: translateX(10px) scale(0.92);
+  transform-origin: right center;
+  transition: opacity 0.25s var(--ease-master), transform 0.25s var(--ease-master);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.climber-speech-bubble::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -7px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 7px solid #122238;
+}
+
+.climber-speech-bubble.bubble--visible {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* ==========================================================================
+   MICRO-DETALLE 4: CINTA ADHESIVA DE PRECINTO DE FÁBRICA (TAPE STRIP)
+   ========================================================================== */
+.factory-tape-strip {
+  position: absolute;
+  top: 14px;
+  right: -36px;
+  background-color: rgba(254, 243, 199, 0.96);
+  color: #92400E;
+  border-top: 1.5px dashed #D97706;
+  border-bottom: 1.5px dashed #D97706;
+  padding: 4px 44px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.625rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  transform: rotate(14deg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+  z-index: 10;
+  text-transform: uppercase;
+  white-space: nowrap !important;
+}
+
+/* ==========================================================================
+   MICRO-DETALLE 5: CALCULADOR DINÁMICO DE AHORRO EN EL MODAL (SAVINGS ESTIMATOR)
+   ========================================================================== */
+.savings-estimator {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background-color: #FEF3C7;
+  border: 2px solid #FCD34D;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 3px 0 #FDE68A;
+  animation: savingsPop 0.25s var(--ease-master);
+}
+
+@keyframes savingsPop {
+  from { opacity: 0; transform: translateY(-4px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.savings-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #92400E;
+  margin-bottom: 4px;
+}
+
+.savings-icon {
+  width: 16px;
+  height: 16px;
+  color: #B45309;
+  flex-shrink: 0;
+}
+
+.savings-desc {
+  font-size: 0.825rem;
+  color: #78350F;
+  line-height: 1.45;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   MICRO-DETALLE 6: ESTADO EN VIVO CON PULSO LED EN TIENDAS FÍSICAS
+   ========================================================================== */
+.store-live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  background-color: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #166534;
+  width: fit-content;
+}
+
+.live-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #22C55E;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: livePulse 1.8s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes livePulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.live-status-text {
+  white-space: nowrap !important;
+}
+
+/* ==========================================================================
+   MICRO-DETALLE 7: MICRO-SELECTOR DE FIRMEZA Y ALINEACIÓN LUMBAR SVG
+   ========================================================================== */
+.firmness-meter-box {
+  background-color: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.firmness-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.firmness-label {
+  color: #64748B;
+}
+
+.firmness-active-val {
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.firmness-selector-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.firmness-pill-btn {
+  background-color: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  border-radius: var(--radius-sm);
+  padding: 4px 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap !important;
+}
+
+.firmness-pill-btn:hover {
+  border-color: #F59E0B;
+  color: #0F172A;
+}
+
+.firmness-pill-btn--active {
+  background-color: #0F2137;
+  border-color: #0F2137;
+  color: #FFFFFF;
+  box-shadow: 0 2px 0 rgba(15, 33, 55, 0.2);
+}
+
+.spine-alignment-graphic {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 4px;
+  border-top: 1px solid #E2E8F0;
+}
+
+.spine-svg {
+  width: 90px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.spine-caption {
+  font-size: 0.68rem;
+  color: #15803D;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   MICRO-DETALLE 8: GARANTÍA DE ACCESO PARA PORTALES DIFÍCILES DE MADRID
+   ========================================================================== */
+.access-guarantee-box {
+  background-color: #F8FAFC;
+  border: 1.5px solid #CBD5E1;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin-top: 4px;
+}
+
+.access-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #0F2137;
+  margin-bottom: 4px;
+}
+
+.access-badge svg {
+  color: #F59E0B;
+  flex-shrink: 0;
+}
+
+.access-desc {
+  font-size: 0.72rem;
+  color: #475569;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.access-desc strong {
+  color: #0F2137;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Media Queries Calculadas al Milímetro Estilo Tomuza Opción 3)
+   Regla Fija: Pastillas y Botones SIEMPRE en 1 sola línea (white-space: nowrap !important)
+   Cero Desbordamiento Horizontal, Márgenes Protegidos y Cero Solapamientos.
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hero-layout,
+  .comparison-grid,
+  .service-card--featured,
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Ocultar carril lateral en móvil para proteger espacio y legibilidad */
+  .rope-scroll-track,
+  .climber-speech-bubble {
+    display: none !important;
+  }
+
+  .hero-trust-bar {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .comparison-card {
+    padding: 22px 18px;
+  }
+
+  .stores-grid,
+  .services-grid,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-badge {
+    font-size: 0.72rem;
+    padding: 4px 10px;
+    letter-spacing: 0.02em;
+    white-space: nowrap !important;
+    max-width: 100%;
+  }
+}
+
+/* Cabecera y Elementos Móviles Impecables (640px hacia abajo) */
+@media (max-width: 640px) {
+  .services-grid,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-badge {
+    font-size: 0.72rem;
+    padding: 4px 10px;
+    letter-spacing: 0.02em;
+    white-space: nowrap !important;
+    max-width: 100%;
+  }
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .site-header .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .header-inner {
+    height: 56px;
+    gap: 8px;
+  }
+
+  .brand-logo {
+    gap: 6px;
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+
+  .brand-logo-img {
+    height: 32px;
+    max-width: 110px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  /* Ocultar texto duplicado en móvil porque la imagen ya dice DORMISTOCK */
+  .brand-title {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .header-phone-link {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-color: var(--bg-secondary);
+    border: 1px solid #CBD5E1;
+  }
+
+  .header-phone-text {
+    display: none;
+  }
+
+  .header-phone-icon {
+    width: 17px;
+    height: 17px;
+  }
+
+  .cta-text-full {
+    display: none;
+  }
+
+  .cta-text-mobile {
+    display: inline;
+    white-space: nowrap !important;
+  }
+
+  .header-cta-btn {
+    padding: 7px 11px;
+    font-size: 0.78rem;
+    border-radius: var(--radius-sm);
+    white-space: nowrap !important;
+    flex-shrink: 0;
+  }
+
+  .header-cta-btn .btn-icon--arrow {
+    display: none;
+  }
+
+  /* Textos dinámicos en 1 sola línea */
+  .btn-text-desktop {
+    display: none;
+  }
+
+  .btn-text-mobile {
+    display: inline;
+    white-space: nowrap !important;
+  }
+
+  /* Hero Adaptado */
+  .hero-section {
+    padding-top: clamp(20px, 4vw, 36px);
+    padding-bottom: clamp(36px, 6vw, 56px);
+  }
+
+  .hero-copy {
+    gap: 16px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 5.2vw, 2.35rem);
+    line-height: 1.15;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  .hero-status-pill {
+    padding: 5px 11px;
+    font-size: 0.72rem;
+    gap: 6px;
+    white-space: nowrap !important;
+    flex-shrink: 0;
+  }
+
+  .pill-text-desktop {
+    display: none;
+  }
+
+  .pill-text-mobile {
+    display: inline;
+    white-space: nowrap !important;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 0.9375rem;
+    white-space: nowrap !important;
+    justify-content: center;
+  }
+
+  /* Tarjeta Oficial del Hero en Móvil */
+  .hero-card-panel {
+    padding: 16px 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .panel-header-title {
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+
+  .stamp-seal-badge {
+    font-size: 0.58rem;
+    padding: 3px 6px;
+    white-space: nowrap !important;
+    flex-shrink: 0;
+  }
+
+  .panel-badge-24h {
+    font-size: 0.72rem;
+    padding: 4px 9px;
+    white-space: nowrap !important;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .panel-phone-box {
+    padding: 12px 14px;
+    gap: 8px;
+  }
+
+  .panel-phone-number {
+    font-size: 1.125rem;
+    white-space: nowrap !important;
+  }
+
+  .panel-call-btn {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .panel-perks {
+    gap: 10px;
+    margin: 14px 0;
+    font-size: 0.85rem;
+  }
+
+  .panel-maps-link {
+    font-size: 0.78rem;
+    padding: 8px 12px;
+    white-space: nowrap !important;
+  }
+
+  /* Tarjetas de Producto */
+  .service-card {
+    padding: 18px 14px;
+  }
+
+  .service-badge-pill {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    white-space: nowrap !important;
+    flex-shrink: 0;
+  }
+
+  .spec-chip {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    white-space: nowrap !important;
+    flex-shrink: 0;
+  }
+
+  .service-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .service-footer .btn {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.875rem;
+    white-space: nowrap !important;
+    justify-content: center;
+  }
+
+  /* Modal de Cualificación en Móvil */
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal-card {
+    padding: 18px 14px;
+    border-radius: 16px;
+    max-height: 90vh;
+  }
+
+  .step-heading {
+    font-size: 1.15rem;
+    line-height: 1.25;
+  }
+
+  .step-subheading {
+    font-size: 0.8125rem;
+    margin-bottom: 14px;
+  }
+
+  .option-btn {
+    padding: 11px 12px;
+    font-size: 0.85rem;
+    white-space: nowrap !important;
+  }
+
+  .option-label {
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .modal-nav-row {
+    gap: 8px;
+    width: 100%;
+  }
+
+  .modal-nav-row .btn {
+    padding: 11px 14px;
+    font-size: 0.85rem;
+    white-space: nowrap !important;
+  }
+
+  .prev-step-btn {
+    flex: 0 0 auto;
+  }
+
+  .next-step-btn,
+  .modal-submit-btn {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  /* Botón Flotante de WhatsApp */
+  .whatsapp-floating-btn span {
+    display: none;
+  }
+
+  .whatsapp-floating-btn {
+    padding: 12px;
+    border-radius: 50%;
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .btn {
+    padding: 10px 14px;
+    font-size: 0.8125rem;
+    white-space: nowrap !important;
+  }
+
+  .btn--lg {
+    padding: 12px 16px;
+    font-size: 0.875rem;
+  }
+}
+
+/* ==========================================================================
+   CURSOR FLOTANTE CON INERCIA SEDOSA (ESTILO EXACTO TOMUZA OPCIÓN 3)
+   Solo Escritorio con Ratón (hover: hover y pointer: fine)
+   ========================================================================== */
+@media (hover: hover) and (pointer: fine) {
+  /* Ocultar el cursor estándar para dar paso al círculo con inercia */
+  html, body, a, button, input, select, textarea, label, [role="button"],
+  .btn, .dock-btn, .option-btn, .service-card, .service-link, 
+  .modal-close-btn, .compliance-btn, .faq-trigger, .tab-btn, 
+  .header-phone-link, .whatsapp-floating-btn, .panel-call-btn, .panel-maps-link {
+    cursor: none !important;
+  }
+
+  /* Punto central de máxima precisión de clic (sigue al milisegundo) */
+  .custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #F59E0B;
+    border: 1.5px solid #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 4px rgba(245, 158, 11, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999999;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.25s ease;
+  }
+
+  /* Círculo mediano seguidor con inercia sedosa y velocidad máxima contenida */
+  .custom-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    border: 1.5px solid #F59E0B;
+    background-color: rgba(245, 158, 11, 0.08);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.2), inset 0 0 4px rgba(245, 158, 11, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999998;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.25s ease,
+                background-color 0.25s ease,
+                box-shadow 0.25s ease,
+                opacity 0.25s ease;
+    will-change: transform;
+  }
+
+  /* Expansión sutil al posarse sobre botones o elementos interactivos */
+  .custom-cursor-ring.cursor-ring--hover {
+    width: 48px;
+    height: 48px;
+    border-width: 2px;
+    border-color: #FBBF24;
+    background-color: rgba(245, 158, 11, 0.16);
+    box-shadow: 0 0 18px rgba(251, 191, 36, 0.45);
+  }
+
+  /* Contracción táctil al hacer clic */
+  .custom-cursor-ring.cursor-ring--click {
+    width: 28px;
+    height: 28px;
+    border-color: #D97706;
+    background-color: rgba(217, 119, 6, 0.28);
+  }
+}
+
+/* En móviles y pantallas táctiles el cursor personalizado no se renderiza */
+@media (hover: none) or (pointer: coarse) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+}
